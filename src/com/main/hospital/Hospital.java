@@ -23,6 +23,7 @@ public class Hospital {
     Patient patient3 = new Patient("danial", "accident");
     Patient patient4 = new Patient("eddie", "heart attack");
     Patient patient5 = new Patient("bosco", "dengue");
+    Patient patient6 = new Patient("max", "cold and cough");
 
     Nurse nurse = new Nurse();
     nurse.addPatient(patient1, Priority.PATIENT);
@@ -30,7 +31,8 @@ public class Hospital {
     nurse.addPatient(patient3, Priority.PATIENT);
     nurse.addPatient(patient4, Priority.EMERGENCY);
     nurse.addPatient(patient5, Priority.PATIENT);
-
+    nurse.addPatient(patient6, Priority.PATIENT);
+    nurse.changePatientPriority(patient6, Priority.PATIENT);
     nurse.checkAvailability();
 
   }
