@@ -24,6 +24,7 @@ public class Hospital {
     Patient patient4 = new Patient("eddie", "heart attack");
     Patient patient5 = new Patient("bosco", "dengue");
     Patient patient6 = new Patient("max", "cold and cough");
+    Patient patient7 = new Patient("john", "stomach pain");
 
     Nurse nurse = new Nurse();
     nurse.addPatient(patient1, Priority.PATIENT);
@@ -32,8 +33,16 @@ public class Hospital {
     nurse.addPatient(patient4, Priority.EMERGENCY);
     nurse.addPatient(patient5, Priority.PATIENT);
     nurse.addPatient(patient6, Priority.PATIENT);
+    nurse.addPatient(patient7, Priority.PATIENT);
     nurse.changePatientPriority(patient6, Priority.PATIENT);
-    nurse.checkAvailability();
+    nurse.changePatientPriority(patient7, Priority.EMERGENCY);
+
+    Thread doctor1 = new Thread(new Doctor("A"));
+    Thread doctor2 = new Thread(new Doctor("B"));
+    Thread doctor3 = new Thread(new Doctor("C"));
+    doctor1.start();
+    doctor2.start();
+    doctor3.start();
 
   }
 
