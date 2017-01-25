@@ -34,14 +34,14 @@ public class Hospital {
     nurse.addPatient(patient5, Priority.PATIENT);
     nurse.addPatient(patient6, Priority.PATIENT);
     nurse.addPatient(patient7, Priority.PATIENT);
-    nurse.changePatientPriority(patient6, Priority.PATIENT);
-    nurse.changePatientPriority(patient7, Priority.EMERGENCY);
 
     Thread doctor1 = new Thread(new Doctor("A"));
     Thread doctor2 = new Thread(new Doctor("B"));
     Thread doctor3 = new Thread(new Doctor("C"));
     doctor1.start();
+    nurse.changePatientPriority(patient6, Priority.PATIENT);
     doctor2.start();
+    nurse.changePatientPriority(patient7, Priority.EMERGENCY);
     doctor3.start();
 
   }

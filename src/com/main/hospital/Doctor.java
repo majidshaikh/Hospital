@@ -36,7 +36,7 @@ public class Doctor implements Runnable {
     try {
       System.out.println(String.format("Dr.%s is operating patient %s with medical problem %s ", name, patient.getName(), patient.getMedicalProblem()));
       Thread.sleep(5000); //this is just for demonstration purpose
-      System.out.println("Next patient");
+      System.out.println(String.format("Dr.%s Calling next patient", name));
     } catch (InterruptedException ex) {
       Logger.getLogger(Doctor.class.getName()).log(Level.SEVERE, null, ex);
     }
